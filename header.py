@@ -1,28 +1,16 @@
 import dash_html_components as html
+import dash_core_components as dcc
 
-# ✅ Function to create a styled header component
+# ✅ Function to create a Material Design-styled header
 def create_header():
     return html.Div([
-        # Left-aligned title
-        html.Div("One Health 360", style={
-            "fontSize": "24px",
-            "fontWeight": "bold",
-            "color": "white",
-            "display": "inline-block",
-            "marginLeft": "20px"
-        }),
-        
-        # Right-aligned navigation links
+        html.Div("One Health 360", className="header-title"),
+
         html.Div([
-            html.A("Home", href="#", style={"color": "white", "marginRight": "20px"}),
-            html.A("Dashboard", href="#", style={"color": "white", "marginRight": "20px"}),
-            html.A("Resources", href="#", style={"color": "white", "marginRight": "20px"}),
-            html.A("About", href="#", style={"color": "white"})
-        ], style={"float": "right", "marginRight": "20px"})
-    ], style={
-        "backgroundColor": "#1976D2",  # Blue background
-        "padding": "10px",
-        "display": "flex",
-        "justifyContent": "space-between",
-        "alignItems": "center"
-    })
+            dcc.Link(html.Button("Home", className="material-button"), href="#"),
+            dcc.Link(html.Button("Dashboard", className="material-button"), href="#"),
+            dcc.Link(html.Button("Resources", className="material-button"), href="#"),
+            dcc.Link(html.Button("About", className="material-button"), href="#"),
+        ], className="nav-links")
+
+    ], className="navbar")

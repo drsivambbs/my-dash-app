@@ -1,0 +1,87 @@
+/* ✅ Ensure Full Viewport Width */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* ✅ Bootstrap-Like Navbar Styling - Full Width but Restricted */
+.navbar {
+    background-color: #007bff; /* Bootstrap primary blue */
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between; /* Space between brand and links */
+    align-items: center; /* Center items vertically */
+    width: 100vw; /* Ensures navbar is 100% viewport width */
+    max-width: 100%; /* Prevents extra width */
+    box-sizing: border-box; /* Ensures padding doesn’t add extra width */
+    overflow: hidden; /* Prevents cut-off elements */
+}
+
+/* ✅ Navbar Brand (Title) */
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevents title from breaking */
+}
+
+/* ✅ Navigation Links Container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap; /* Ensures buttons stay in a single line */
+    overflow: hidden; /* Prevents buttons from getting cut off */
+}
+
+/* ✅ Bootstrap-Like Button Styling */
+.material-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    white-space: nowrap; /* Prevents text wrapping inside buttons */
+}
+
+/* ✅ Bootstrap-Like Button Hover Effect */
+.material-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light transparent white hover */
+    border-radius: 4px;
+}
+
+/* ✅ Bootstrap-Like Active Link */
+.material-button:active {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Fix for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .header-title {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
