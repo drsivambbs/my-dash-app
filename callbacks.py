@@ -6,11 +6,11 @@ def register_callbacks(app):
     
     @app.callback(
         Output("india-boundary", "style"),  # Update the style of the GeoJSON layer
-        Input("toggle-layer", "value")  # Get value from dropdown
+        Input("toggle-layer", "value")  # Get value from toggle switch
     )
-    def toggle_layer(selected_value):
-        """Show/Hide the India boundary based on dropdown selection."""
-        if selected_value == "show":
-            return {"color": "blue", "weight": 1, "fillOpacity": 0}  # Show
-        else:
-            return {"color": "blue", "weight": 0, "fillOpacity": 0}  # Show
+    def toggle_layer(is_checked):
+        """Show/Hide the India boundary based on toggle switch state."""
+        if is_checked:  # If True, show the boundary
+            return {"color": "blue", "weight": 1, "fillOpacity": 0}
+        else:  # If False, hide the boundary
+            return {"color": "blue", "weight": 0, "fillOpacity": 0}
