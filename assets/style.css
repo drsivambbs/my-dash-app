@@ -3,85 +3,245 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
     overflow-x: hidden; /* Prevents horizontal scrolling */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
 }
 
-/* ✅ Bootstrap-Like Navbar Styling - Full Width but Restricted */
+/* ✅ Navbar Styling (Header) */
 .navbar {
-    background-color: #007bff; /* Bootstrap primary blue */
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     padding: 12px 30px;
     display: flex;
-    justify-content: space-between; /* Space between brand and links */
-    align-items: center; /* Center items vertically */
-    width: 100vw; /* Ensures navbar is 100% viewport width */
-    max-width: 100%; /* Prevents extra width */
-    box-sizing: border-box; /* Ensures padding doesn’t add extra width */
-    overflow: hidden; /* Prevents cut-off elements */
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    min-height: 60px;
 }
 
 /* ✅ Navbar Brand (Title) */
 .header-title {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
     color: white;
     font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
-    white-space: nowrap; /* Prevents title from breaking */
+    white-space: nowrap;
+    letter-spacing: 0.5px;
 }
 
-/* ✅ Navigation Links Container */
+/* ✅ Navigation Buttons */
 .nav-links {
     display: flex;
     align-items: center;
     gap: 15px;
-    flex-wrap: nowrap; /* Ensures buttons stay in a single line */
-    overflow: hidden; /* Prevents buttons from getting cut off */
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
-/* ✅ Bootstrap-Like Button Styling */
+/* ✅ Navbar Button */
 .material-button {
-    background-color: transparent;
+    background: rgba(255, 255, 255, 0.15);
     color: white;
     border: none;
-    padding: 10px 16px;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+    transition: background 0.3s ease, transform 0.2s ease;
     outline: none;
-    white-space: nowrap; /* Prevents text wrapping inside buttons */
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Bootstrap-Like Button Hover Effect */
+/* ✅ Button Hover & Click Effects */
 .material-button:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light transparent white hover */
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
 }
 
-/* ✅ Bootstrap-Like Active Link */
 .material-button:active {
-    background-color: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(0.98);
 }
 
-/* ✅ Fix for Mobile Responsiveness */
+/* ✅ Floating Sidebar Toggle Button */
+.sidebar-floating-btn {
+    position: fixed;
+    bottom: 90px; /* ✅ Moved lower to avoid blocking UI */
+    left: 15px;
+    background: white;
+    border-color: #1e3c72;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 20%;
+    font-size: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1200;
+}
+
+.sidebar-floating-btn:hover {
+    background: #f1f1f1;
+    transform: scale(1.1);
+}
+
+/* ✅ Sidebar Styling (Collapsible) */
+.sidebar {
+    width: 260px;
+    background: #ffffff;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    transition: width 0.3s ease-in-out;
+    z-index: 1100;
+}
+
+/* ✅ Hide Sidebar when Collapsed */
+.sidebar.collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ✅ Sidebar Content */
+.sidebar-content {
+    display: block;
+}
+
+/* ✅ Main Content Adjusts with Sidebar */
+.main-content {
+    transition: margin-left 0.3s ease-in-out;
+    margin-left: 260px; /* Sidebar width */
+    width: calc(100% - 260px);
+    height: 100%; /* ✅ Ensures full height */
+}
+
+/* ✅ Collapsed Sidebar - Map Expands */
+.main-content.expanded {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* ✅ Chips Container */
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* ✅ Icon-Based Chips */
+.chip {
+    background: #f1f3f4;
+    color: #333;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* ✅ Chip Hover Effect */
+.chip:hover {
+    background: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ✅ Active Chip */
+.chip.active {
+    background: #007bff;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* ✅ Map Container */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* ✅ Ensures full height */
+}
+
+/* ✅ Move "Add Layers" Toggle Inside Map */
+.map-layer-control {
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1000;
+}
+
+/* ✅ Toggle Label */
+.toggle-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ✅ Ensure Sidebar Shows on Mobile */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
+}
+
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .header-title {
-        margin-bottom: 10px;
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        box-shadow: none;
         text-align: center;
+        padding: 15px;
+        z-index: 1100;
     }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
+    .sidebar.collapsed {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        height: auto; /* ✅ Fixes extra white space issue */
     }
 }
