@@ -1,0 +1,37 @@
+/* ✅ Floating Sidebar Toggle Button */
+.sidebar-floating-btn {
+    position: fixed;
+    bottom: 90px;
+    left: 15px;
+    background: white;
+    border-color: #1e3c72;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 20%;
+    font-size: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 1200;
+}
+
+.sidebar-floating-btn:hover {
+    background: #f1f1f1;
+    transform: scale(1.1);
+}
+
+/* ✅ Material Button */
+.material-button {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.material-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}

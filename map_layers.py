@@ -25,10 +25,9 @@ def india_boundary_layer():
 
 # ✅ Function to Create a Complete Map
 def create_map():
-    """Returns a complete Leaflet Map."""
+    """Returns a complete Leaflet Map without inline styles (now handled in CSS)."""
     return dl.Map(
         id="map",
-        style={'width': '100%', 'height': '600px'},  # Define map size
         center=[22.3511, 78.6677],  # Centered on India
         zoom=5,  # Default zoom level
         children=[

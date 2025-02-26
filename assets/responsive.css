@@ -1,0 +1,38 @@
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        box-shadow: none;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .sidebar.collapsed {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .chip {
+        font-size: 13px;
+        padding: 8px 14px;
+        min-width: 80px;
+    }
+}

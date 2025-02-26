@@ -1,0 +1,79 @@
+/* ✅ Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    min-height: 60px;
+}
+
+/* ✅ Navbar Brand (Title) */
+.header-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+/* ✅ Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+/* ✅ Navbar Buttons */
+.nav-button {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: background 0.3s ease, transform 0.2s ease;
+    outline: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Navbar Button Hover & Click Effects */
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+.nav-button:active {
+    background: rgba(255, 255, 255, 0.35);
+    transform: scale(0.98);
+}
+
+/* ✅ Mobile Header Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .nav-button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}

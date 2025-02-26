@@ -1,0 +1,48 @@
+/* ✅ Chips Container */
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* ✅ Chip Style */
+.chip {
+    background: #f1f3f4;
+    color: #333;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    min-width: 100px;
+    text-align: center;
+}
+
+.chip:hover {
+    background: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+
+.chip.active {
+    background: #007bff;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* ✅ Chip Label */
+.chip-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
